@@ -1,58 +1,124 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div>
+    <section
+      class="max-w-md p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-800 left-12 bottom-16 dark:border-gray-700 rounded-2xl"
+    >
+      <h2 class="font-semibold text-gray-800 dark:text-white">Question 1</h2>
+
+      <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+        There are more than 10,000 different types of cells in your body.
+      </p>
+
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">Select Answer</p>
+
+      <select
+        v-model="this.question1"
+        id="countries"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option>True</option>
+        <option>False</option>
+        <option>Not sure</option>
+      </select>
+    </section>
+  </div>
+
+  <div class="mt-5">
+    <section
+      class="max-w-md p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-800 left-12 bottom-16 dark:border-gray-700 rounded-2xl"
+    >
+      <h2 class="font-semibold text-gray-800 dark:text-white">Question 2</h2>
+
+      <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">The number of mitochondria in a given cell varies with the cell's energy demands
+      </p>
+
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">Select Answer</p>
+
+      <select
+        v-model="this.question2"
+        id="countries"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option>True</option>
+        <option>False</option>
+        <option>Not sure</option>
+      </select>
+    </section>
+  </div>
+
+  <div class="mt-5">
+    <section
+      class="max-w-md p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-800 left-12 bottom-16 dark:border-gray-700 rounded-2xl"
+    >
+      <h2 class="font-semibold text-gray-800 dark:text-white">Question 3</h2>
+
+      <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+        The amount of ATP generated during glycolysis is very small compared to the amount generated from breaking down pyruvate
+      </p>
+
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">Select Answer</p>
+
+      <select
+        v-model="this.question3"
+        id="countries"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option>True</option>
+        <option>False</option>
+        <option>Not sure</option>
+      </select>
+    </section>
+  </div>
+
+  <div class="mt-4">
+    <button
+      class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow"
+    >
+      <div
+        class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"
+      ></div>
+      <span
+        class="relative text-black group-hover:text-white"
+        @click="check_answer"
+        >Submit answer</span
+      >
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
-  }
-}
+    msg: String,
+  },
+
+  data() {
+    return {
+      score: 0,
+      question1: 0,
+      question2: 0,
+      question3: 0,
+      modal: false,
+    };
+  },
+
+  methods: {
+    check_answer() {
+      if (this.question1 == "False"){
+        this.score = this.score + 1
+      }
+      if (this.question2 == "True"){
+        this.score = this.score + 1
+      }
+      if (this.question3 == "True"){
+        this.score = this.score + 1
+      }
+      alert("Congratulations Your score is: " + this.score)
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<style scoped></style>
